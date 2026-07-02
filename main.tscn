@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ca5d284xgflpy"]
+
+[ext_resource type="PackedScene" uid="uid://tn84f7tf3rpd" path="res://physics_car.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://4drqe17p01v5" path="res://Cars/Models/GLB format/ambulance.glb" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bp61hdstgepvi" path="res://torus.tscn" id="3_h2yge"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7dm0k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(80, 1, 80)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+size = Vector3(80, 1, 80)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(1.5097656, 2.5512695, 3.2758179)
+
+[node name="Main" type="Node3D" unique_id=561261415]
+
+[node name="physics car" parent="." unique_id=2038350864 instance=ExtResource("1_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8285975, 0)
+
+[node name="Camera3D" type="Camera3D" parent="physics car" unique_id=2133759530]
+transform = Transform3D(-1, 0, -8.742278e-08, -4.800985e-08, 0.83571154, 0.54916865, 7.306022e-08, 0.54916865, -0.83571154, 0.20900106, 6.6721654, -6.1052704)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=496626116]
+physics_material_override = SubResource("PhysicsMaterial_7dm0k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=285834367]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2092400564]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=4226078]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 25.799881, 0)
+
+[node name="amberlance" type="RigidBody3D" parent="." unique_id=1426603924]
+transform = Transform3D(0.20294107, 0, -0.97919095, 0, 1, 0, 0.97919095, 0, 0.20294107, 6.297306, 0.5, 25.034472)
+mass = 3000.0
+physics_material_override = SubResource("PhysicsMaterial_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="amberlance" unique_id=1555583601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06640816, 0.77563477, -0.16684055)
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="ambulance" parent="amberlance" unique_id=1805555252 instance=ExtResource("2_0xm2m")]
+
+[node name="Torus" parent="." unique_id=728021727 instance=ExtResource("3_h2yge")]
+transform = Transform3D(-1.8626451e-07, -2.8999994, 0, 2.8396533, -1.17993245e-07, 0.588529, -0.58852893, 0, 2.839653, 56.44097, 1.0994987, 28.148417)

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://djh5xlaqbfeym"]
+
+[ext_resource type="PackedScene" uid="uid://b0jk8sxawcbqy" path="res://Cars/Models/GLB format/garbage-truck.glb" id="1_7822p"]
+[ext_resource type="Script" uid="uid://b2u2257omndrq" path="res://car.gd" id="1_uoj53"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uoj53"]
+size = Vector3(1.5734253, 1.3702698, 3.2915344)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k61xc"]
+height = 1.2143555
+radius = 0.27148438
+
+[node name="Car" type="CharacterBody3D" unique_id=976440697]
+script = ExtResource("1_uoj53")
+
+[node name="pivot" type="Node3D" parent="." unique_id=247387482]
+
+[node name="garbage-truck" parent="pivot" unique_id=1360004874 instance=ExtResource("1_7822p")]
+
+[node name="body collision" type="CollisionShape3D" parent="." unique_id=594193430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014373779, 0.92026734, 0.0973053)
+shape = SubResource("BoxShape3D_uoj53")
+
+[node name="wheel back" type="CollisionShape3D" parent="." unique_id=1101979215]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.006591797, 0.29182446, -0.51285064)
+shape = SubResource("CylinderShape3D_k61xc")
+
+[node name="wheel front" type="CollisionShape3D" parent="." unique_id=1450945603]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.006591797, 0.29182446, 1.1011535)
+shape = SubResource("CylinderShape3D_k61xc")

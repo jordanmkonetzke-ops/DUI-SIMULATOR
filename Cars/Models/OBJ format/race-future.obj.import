@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://t5go7tp4jm1i"
+path="res://.godot/imported/race-future.obj-2deb8df9b82d8ea61f643759c62c452d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/race-future.obj-2deb8df9b82d8ea61f643759c62c452d.mesh"]
+
+source_file="res://Cars/Models/OBJ format/race-future.obj"
+dest_files=["res://.godot/imported/race-future.obj-2deb8df9b82d8ea61f643759c62c452d.mesh", "res://.godot/imported/race-future.obj-2deb8df9b82d8ea61f643759c62c452d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
