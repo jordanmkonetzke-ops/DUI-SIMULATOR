@@ -1,3 +1,4 @@
+#based off of https://kidscancode.org/godot_recipes/4.x/3d/3d_sphere_car/index.html
 extends RigidBody3D
 
 @onready var car_mesh: Node3D = $"garbage-truck"
