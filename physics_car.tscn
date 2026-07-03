@@ -10,10 +10,6 @@
 radius = 0.29345703
 height = 1.33844
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m27hy"]
-radius = 0.2578125
-height = 1.2662964
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mockb"]
 radius = 0.39453125
 height = 1.3156128
@@ -38,28 +34,28 @@ script = ExtResource("1_5frsb")
 [node name="garbage-truck" parent="pivot" unique_id=1360004874 instance=ExtResource("1_xevvk")]
 
 [node name="wheel back" type="CollisionShape3D" parent="." unique_id=968581746]
-transform = Transform3D(-4.3709903e-08, 1, 0, -1, -4.371139e-08, 0, 1.01030295e-14, 0, 1, 0.0073112017, 0.29662603, -0.5008672)
+transform = Transform3D(-4.3709903e-08, 1, 0, -1, -4.371139e-08, 0, 1.01030295e-14, 0, 1, 0, 0.297, -0.501)
 shape = SubResource("CapsuleShape3D_gqi50")
 
 [node name="wheel front" type="CollisionShape3D" parent="." unique_id=758276563]
-transform = Transform3D(-4.3709388e-08, 1, 0, -1, -4.371139e-08, 0, 1.3600232e-14, 0, 1, -0.037139893, 0.29182446, 1.101153)
-shape = SubResource("CapsuleShape3D_m27hy")
+transform = Transform3D(-4.3709388e-08, 1, 0, -1, -4.371139e-08, 0, 1.3600232e-14, 0, 1, 0, 0.297, 1.101)
+shape = SubResource("CapsuleShape3D_gqi50")
 
 [node name="hood front" type="CollisionShape3D" parent="." unique_id=392912798]
-transform = Transform3D(-4.370901e-08, 1, 0, -1, -4.371139e-08, 0, 1.6153745e-14, 0, 1, -0.0045541083, 0.51087564, 1.2907901)
+transform = Transform3D(-4.370901e-08, 1, 0, -1, -4.371139e-08, 0, 1.6153745e-14, 0, 1, 0, 0.511, 1.291)
 shape = SubResource("CapsuleShape3D_mockb")
 debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
 
 [node name="conector hood body" type="CollisionShape3D" parent="." unique_id=1513547539]
-transform = Transform3D(-4.3709008e-08, 1, 0, -1, -4.371139e-08, 0, 1.6153745e-14, 0, 1, -0.0007162802, 0.51087564, 0.8510184)
+transform = Transform3D(-4.3709008e-08, 1, 0, -1, -4.371139e-08, 0, 1.6153745e-14, 0, 1, 0, 0.511, 0.851)
 shape = SubResource("CapsuleShape3D_mockb")
 debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
 
 [node name="main body" type="CollisionShape3D" parent="." unique_id=1605532448]
-transform = Transform3D(0.9999238, -0.008726535, 0.008725619, 0.008726535, -4.371139e-08, -0.9999619, 0.008726203, 0.9999619, 7.610712e-05, 0.002271898, 0.97761, -0.2603335)
+transform = Transform3D(0.9999238, -0.008726535, 0.008725619, 0.008726535, -4.371139e-08, -0.9999619, 0.008726203, 0.9999619, 7.610712e-05, 0, 0.978, -0.26)
 shape = ExtResource("3_cm77r")
 
 [node name="bumper back" type="CollisionShape3D" parent="." unique_id=1980414819]
-transform = Transform3D(-4.3710273e-08, -1, 0, 1, -4.371139e-08, 0, 7.577272e-15, 0, 1, -0.02167622, 0.6593831, -1.1005431)
+transform = Transform3D(-4.3710273e-08, -1, 0, 1, -4.371139e-08, 0, 7.577272e-15, 0, 1, 0, 0.659, -1.101)
 shape = SubResource("CapsuleShape3D_fvqej")
 debug_color = Color(0, 0.6, 0.7019608, 0.41960785)

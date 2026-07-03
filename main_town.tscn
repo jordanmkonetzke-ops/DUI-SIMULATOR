@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dwe4k2yite8y6"]
 
-[ext_resource type="PackedScene" uid="uid://tn84f7tf3rpd" path="res://physics_car.tscn" id="1_eox04"]
+[ext_resource type="PackedScene" uid="uid://0b26ifpat28h" path="res://garbage_truck.tscn" id="1_st4g4"]
 [ext_resource type="ArrayMesh" uid="uid://bcuc0yu6irlc0" path="res://houses/Models/OBJ format/building-type-h.obj" id="2_2ckwc"]
 [ext_resource type="Texture2D" uid="uid://bar51n8ayl04d" path="res://13075.jpg" id="2_6dehh"]
 [ext_resource type="ArrayMesh" uid="uid://ddxityk26revb" path="res://houses/Models/OBJ format/building-type-i.obj" id="3_6dehh"]
+[ext_resource type="ArrayMesh" uid="uid://c5sd2lht2a0h3" path="res://houses/Models/OBJ format/tree-large.obj" id="3_st4g4"]
+[ext_resource type="ArrayMesh" uid="uid://sro862tmjxga" path="res://roads/Models/OBJ format/road-end-round.obj" id="4_6etiv"]
 [ext_resource type="ArrayMesh" uid="uid://o15al5s4dbjs" path="res://houses/Models/OBJ format/building-type-j.obj" id="4_hu7bf"]
 [ext_resource type="ArrayMesh" uid="uid://2wa4sectofcr" path="res://houses/Models/OBJ format/driveway-long.obj" id="5_st4g4"]
 [ext_resource type="ArrayMesh" uid="uid://cruuivkj21cqr" path="res://houses/Models/OBJ format/building-type-k.obj" id="6_6etiv"]
@@ -42,76 +44,204 @@ data = PackedVector3Array(-0.6541, 0.052199997, -0.39999998, -0.74, 0.0389, -0.5
 
 [node name="Main town" type="Node3D" unique_id=1524760746]
 
-[node name="physics car" parent="." unique_id=2038350864 instance=ExtResource("1_eox04")]
-transform = Transform3D(-0.012217023, 0, -0.9999254, 0, 1, 0, 0.9999254, 0, -0.012217023, -13.112339, 1.8285975, 66.28319)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=308729937]
+transform = Transform3D(-1, 1.7763568e-15, -8.7422784e-08, -2.7410978e-08, 0.94957334, 0.31354505, 8.301434e-08, 0.31354505, -0.94957334, 0, 26.987698, -33.29806)
 
-[node name="Camera3D" type="Camera3D" parent="physics car" unique_id=308729937]
-transform = Transform3D(0.99869156, -0.037803117, -0.03443652, -0.028601643, -0.97117496, 0.23664495, -0.042389803, -0.2353504, -0.9709858, 0.25756073, 2.75203, -2.1292238)
-fov = 78.2
+[node name="Garbage truck" parent="." unique_id=1774180963 instance=ExtResource("1_st4g4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.116892, 0)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=107837852]
 transform = Transform3D(6.592772, 0, 0, 0, 1, 0, 0, 0, 6.047064, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_d15k1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1325537776]
+transform = Transform3D(1.8315065, 0, 0, 0, 1, 0, 0, 0, 1.8395134, 0, 0, 0)
 shape = SubResource("BoxShape3D_ojoh2")
+metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2105546632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D" unique_id=2105546632]
+transform = Transform3D(1.0014135, 0, 0, 0, 1, 0, 0, 0, 1.0923994, 0.21130148, 0, 0.6180982)
 mesh = SubResource("BoxMesh_nlr1t")
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1175454857]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 173.21107, 0)
 
 [node name="town" type="StaticBody3D" parent="." unique_id=1977541848]
 
-[node name="BuildingTypeH" type="MeshInstance3D" parent="town" unique_id=1573256634]
-transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, 6.159094, 0.5, 9.782557)
+[node name="TreeLarge" type="MeshInstance3D" parent="town" unique_id=1047124922]
+transform = Transform3D(25.865652, 0, 0, 0, 12.122901, 0, 0, 0, 27.6136, -82.94981, 0, 24.786953)
+mesh = ExtResource("3_st4g4")
+
+[node name="road that end" type="CollisionShape3D" parent="town" unique_id=833837244]
+transform = Transform3D(-12.815425, 0, -8.6249105e-07, 0, 9.359989, 0, 1.027624e-06, 0, -9.049126, 2.266479, 0.4999981, 66.04304)
+
+[node name="RoadEndRound" type="MeshInstance3D" parent="town/road that end" unique_id=1388147979]
+transform = Transform3D(0.9999999, 0, -7.1054274e-15, 0, 0.99999994, 0, -7.1054274e-15, 0, 1, 0, 0, 0)
+mesh = ExtResource("4_6etiv")
+
+[node name="BuildingTypeH" type="MeshInstance3D" parent="town/road that end" unique_id=1573256634]
+transform = Transform3D(0.7826505, 0, -6.174581e-09, 0, 1.0715823, 0, -8.020656e-09, 0, 1.1083944, 5.102952, 2.0489097e-07, 1.1677241)
 mesh = ExtResource("2_2ckwc")
 
-[node name="BuildingTypeI" type="MeshInstance3D" parent="town" unique_id=1554752023]
-transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, 0.70179224, 0.5, 11.816103)
+[node name="BuildingTypeI" type="MeshInstance3D" parent="town/road that end" unique_id=1554752023]
+transform = Transform3D(-0.7826505, 0, 7.459606e-08, 0, 1.0715823, 0, -8.887825e-08, 0, -1.1083944, 1.8757305, 2.0489097e-07, -1.2846093)
 mesh = ExtResource("3_6dehh")
 
-[node name="BuildingTypeJ" type="MeshInstance3D" parent="town" unique_id=1587986700]
-transform = Transform3D(-10.029999, 0, -1.1920929e-06, 0, 10.03, 0, 1.1920929e-06, 0, -10.029999, -38.05274, 0.5, 52.258404)
+[node name="BuildingTypeJ" type="MeshInstance3D" parent="town/road that end" unique_id=1587986700]
+transform = Transform3D(0.647657, 0, 3.6063938e-08, 0, 0.88675314, 0, -6.4947415e-08, 0, 0.9172157, 1.0574143, 2.0489097e-07, 1.5233111)
 mesh = ExtResource("4_hu7bf")
 
-[node name="DrivewayLong2" type="MeshInstance3D" parent="town/BuildingTypeJ" unique_id=654642141]
+[node name="DrivewayLong2" type="MeshInstance3D" parent="town/road that end/BuildingTypeJ" unique_id=654642141]
 transform = Transform3D(-1.7577457, 0, 6.2767543e-07, 0, 0.69840497, 0, -2.6541224e-07, 0, -4.1569066, -0.84115434, 0, -0.35636806)
 mesh = ExtResource("5_st4g4")
 
-[node name="BuildingTypeK" type="MeshInstance3D" parent="town" unique_id=1525436502]
-transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, 0.7995775, 0.49999997, 13.157274)
+[node name="BuildingTypeJ2" type="MeshInstance3D" parent="town/road that end" unique_id=1755962659]
+transform = Transform3D(-0.6476569, 0, 2.4521476e-08, 0, 0.88675314, 0, -2.085402e-08, 0, -0.9172156, 4.9868684, 2.0489097e-07, -1.4801126)
+mesh = ExtResource("4_hu7bf")
+
+[node name="DrivewayLong2" type="MeshInstance3D" parent="town/road that end/BuildingTypeJ2" unique_id=360302082]
+transform = Transform3D(-1.7577457, 0, 6.2767543e-07, 0, 0.69840497, 0, -2.6541224e-07, 0, -4.1569066, -0.84115434, 0, -0.35636806)
+mesh = ExtResource("5_st4g4")
+
+[node name="BuildingTypeK" type="MeshInstance3D" parent="town/road that end" unique_id=1525436502]
+transform = Transform3D(0.7826505, 0, -6.174581e-09, 0, 1.0715823, 0, -8.020656e-09, 0, 1.1083944, 3.5906308, 2.0489097e-07, 1.217104)
 mesh = ExtResource("6_6etiv")
 
-[node name="BuildingTypeL" type="MeshInstance3D" parent="town" unique_id=2019559680]
-transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, 4.5811725, 0.5, 73.90552)
+[node name="BuildingTypeL" type="MeshInstance3D" parent="town/road that end" unique_id=2019559680]
+transform = Transform3D(-0.7826505, 0, 7.459606e-08, 0, 1.0715823, 0, -8.887825e-08, 0, -1.1083944, 0.6676789, 2.0489097e-07, -1.2029853)
 mesh = ExtResource("7_hv3ej")
 
-[node name="BuildingTypeM" type="MeshInstance3D" parent="town" unique_id=186349605]
-transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, 4.374706, 0.5, 9.890859)
+[node name="BuildingTypeM" type="MeshInstance3D" parent="town/road that end" unique_id=186349605]
+transform = Transform3D(-0.7826505, 0, 7.459606e-08, 0, 1.0715823, 0, -8.887825e-08, 0, -1.1083944, 3.5476916, 2.0489097e-07, -1.5020738)
 mesh = ExtResource("8_iy4cx")
 
-[node name="BuildingTypeN" type="MeshInstance3D" parent="town" unique_id=2012129119]
-transform = Transform3D(-5.047, 0, -7.620758e-07, 0, 5.047, 0, 7.620758e-07, 0, -5.047, -57.868797, 0.5, 52.142197)
+[node name="BuildingTypeN" type="MeshInstance3D" parent="town/road that end" unique_id=2012129119]
+transform = Transform3D(0.5557365, 0, 3.0945465e-08, 0, 0.7608983, 0, -5.5729572e-08, 0, 0.7870374, 2.357516, 2.0489097e-07, 1.5361533)
 mesh = ExtResource("9_ic2ps")
 
-[node name="DrivewayLong" type="MeshInstance3D" parent="town/BuildingTypeN" unique_id=1133801850]
-transform = Transform3D(-2.1971824, 0, 2.6153145e-07, 0, 0.69840497, 0, -3.3176534e-07, 0, -1.7320445, 0.47329712, 0, -0.71690893)
+[node name="DrivewayLong" type="MeshInstance3D" parent="town/road that end/BuildingTypeN" unique_id=1133801850]
+transform = Transform3D(-2.1971824, 0, 5.1671736e-07, 0, 0.69840497, 0, -3.3176536e-07, 0, -3.422064, 0.47329712, 0, -0.7169099)
+mesh = ExtResource("5_st4g4")
+
+[node name="RoadStraight" type="MeshInstance3D" parent="town/road that end" unique_id=441086510]
+transform = Transform3D(-6.327725, 0, 6.666595e-08, 0, 1.0103377, 0, -7.1858017e-07, 0, -0.9905639, 3.6553726, 2.0489097e-07, -0.000875473)
+mesh = ExtResource("12_fn5if")
+
+[node name="road that end2" type="CollisionShape3D" parent="town" unique_id=806064483]
+transform = Transform3D(-4.6744395e-07, 0, 9.049125, 0, 9.359988, 0, -12.815425, 0, -4.6694115e-07, -163.73361, 0.4999981, 121.88779)
+
+[node name="RoadEndRound" type="MeshInstance3D" parent="town/road that end2" unique_id=770157983]
+transform = Transform3D(0.9999999, 0, -7.1054274e-15, 0, 0.99999994, 0, -7.1054274e-15, 0, 1, 0, 0, 0)
+mesh = ExtResource("4_6etiv")
+
+[node name="BuildingTypeH" type="MeshInstance3D" parent="town/road that end2" unique_id=467817122]
+transform = Transform3D(0.7826505, 0, -6.174581e-09, 0, 1.0715823, 0, -8.020656e-09, 0, 1.1083944, 5.102952, 2.0489097e-07, 1.1677241)
+mesh = ExtResource("2_2ckwc")
+
+[node name="BuildingTypeI" type="MeshInstance3D" parent="town/road that end2" unique_id=1797325655]
+transform = Transform3D(-0.7826505, 0, 7.459606e-08, 0, 1.0715823, 0, -8.887825e-08, 0, -1.1083944, 1.8757305, 2.0489097e-07, -1.2846093)
+mesh = ExtResource("3_6dehh")
+
+[node name="BuildingTypeJ" type="MeshInstance3D" parent="town/road that end2" unique_id=1675104177]
+transform = Transform3D(0.647657, 0, 3.6063938e-08, 0, 0.88675314, 0, -6.4947415e-08, 0, 0.9172157, 1.0574143, 2.0489097e-07, 1.5233111)
+mesh = ExtResource("4_hu7bf")
+
+[node name="DrivewayLong2" type="MeshInstance3D" parent="town/road that end2/BuildingTypeJ" unique_id=221818310]
+transform = Transform3D(-1.7577457, 0, 6.2767543e-07, 0, 0.69840497, 0, -2.6541224e-07, 0, -4.1569066, -0.84115434, 0, -0.35636806)
+mesh = ExtResource("5_st4g4")
+
+[node name="BuildingTypeJ2" type="MeshInstance3D" parent="town/road that end2" unique_id=1180703228]
+transform = Transform3D(-0.6476569, 0, 2.4521476e-08, 0, 0.88675314, 0, -2.085402e-08, 0, -0.9172156, 4.9868684, 2.0489097e-07, -1.4801126)
+mesh = ExtResource("4_hu7bf")
+
+[node name="DrivewayLong2" type="MeshInstance3D" parent="town/road that end2/BuildingTypeJ2" unique_id=2062733652]
+transform = Transform3D(-1.7577457, 0, 6.2767543e-07, 0, 0.69840497, 0, -2.6541224e-07, 0, -4.1569066, -0.84115434, 0, -0.35636806)
+mesh = ExtResource("5_st4g4")
+
+[node name="BuildingTypeK" type="MeshInstance3D" parent="town/road that end2" unique_id=550855326]
+transform = Transform3D(0.7826505, 0, -6.174581e-09, 0, 1.0715823, 0, -8.020656e-09, 0, 1.1083944, 3.5906308, 2.0489097e-07, 1.217104)
+mesh = ExtResource("6_6etiv")
+
+[node name="BuildingTypeL" type="MeshInstance3D" parent="town/road that end2" unique_id=2020122735]
+transform = Transform3D(-0.7826505, 0, 7.459606e-08, 0, 1.0715823, 0, -8.887825e-08, 0, -1.1083944, 0.6676789, 2.0489097e-07, -1.2029853)
+mesh = ExtResource("7_hv3ej")
+
+[node name="BuildingTypeM" type="MeshInstance3D" parent="town/road that end2" unique_id=744782291]
+transform = Transform3D(-0.7826505, 0, 7.459606e-08, 0, 1.0715823, 0, -8.887825e-08, 0, -1.1083944, 3.5476916, 2.0489097e-07, -1.5020738)
+mesh = ExtResource("8_iy4cx")
+
+[node name="BuildingTypeN" type="MeshInstance3D" parent="town/road that end2" unique_id=1191555354]
+transform = Transform3D(0.5557365, 0, 3.0945465e-08, 0, 0.7608983, 0, -5.5729572e-08, 0, 0.7870374, 2.357516, 2.0489097e-07, 1.5361533)
+mesh = ExtResource("9_ic2ps")
+
+[node name="DrivewayLong" type="MeshInstance3D" parent="town/road that end2/BuildingTypeN" unique_id=2077336564]
+transform = Transform3D(-2.1971824, 0, 5.1671736e-07, 0, 0.69840497, 0, -3.3176536e-07, 0, -3.422064, 0.47329712, 0, -0.7169099)
+mesh = ExtResource("5_st4g4")
+
+[node name="RoadStraight" type="MeshInstance3D" parent="town/road that end2" unique_id=1555012437]
+transform = Transform3D(-6.327725, 0, 6.666595e-08, 0, 1.0103377, 0, -7.1858017e-07, 0, -0.9905639, 3.6553726, 2.0489097e-07, -0.000875473)
+mesh = ExtResource("12_fn5if")
+
+[node name="RoadEndRound2" type="MeshInstance3D" parent="town" unique_id=1001176348]
+transform = Transform3D(12.815423, 0, 1.6535906e-06, 0, 9.359988, 0, -2.1479839e-06, 0, 9.049126, -137.28441, 0.4999981, 66.04304)
+mesh = ExtResource("4_6etiv")
+
+[node name="RoadEndRound3" type="MeshInstance3D" parent="town" unique_id=1348272694]
+transform = Transform3D(12.815423, 0, 1.6535906e-06, 0, 9.359988, 0, -2.1479839e-06, 0, 9.049126, -209.29512, 0.4999981, -28.23062)
+mesh = ExtResource("4_6etiv")
+
+[node name="BuildingTypeI2" type="MeshInstance3D" parent="town" unique_id=276229668]
+transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, -125.90055, 0.5, 77.66763)
+mesh = ExtResource("3_6dehh")
+
+[node name="BuildingTypeJ3" type="MeshInstance3D" parent="town" unique_id=1611774314]
+transform = Transform3D(-8.3, 0, -1.2532652e-06, 0, 8.3, 0, 1.2532652e-06, 0, -8.3, -115.413475, 0.5, 52.258404)
+mesh = ExtResource("4_hu7bf")
+
+[node name="DrivewayLong2" type="MeshInstance3D" parent="town/BuildingTypeJ3" unique_id=1628133863]
+transform = Transform3D(-1.7577457, 0, 6.2767543e-07, 0, 0.69840497, 0, -2.6541224e-07, 0, -4.1569066, -0.84115434, 0, -0.35636806)
+mesh = ExtResource("5_st4g4")
+
+[node name="BuildingTypeL2" type="MeshInstance3D" parent="town" unique_id=220505918]
+transform = Transform3D(10.03, 0, 0, 0, 10.03, 0, 0, 0, 10.03, -110.418846, 0.5, 76.929)
+mesh = ExtResource("7_hv3ej")
+
+[node name="BuildingTypeN2" type="MeshInstance3D" parent="town" unique_id=1497075584]
+transform = Transform3D(-7.122, 0, -1.0753921e-06, 0, 7.122, 0, 1.0753921e-06, 0, -7.122, -132.07483, 0.5, 52.142197)
+mesh = ExtResource("9_ic2ps")
+
+[node name="DrivewayLong" type="MeshInstance3D" parent="town/BuildingTypeN2" unique_id=299804157]
+transform = Transform3D(-2.1971824, 0, 5.1671736e-07, 0, 0.69840497, 0, -3.3176536e-07, 0, -3.422064, 0.47329712, 0, -0.7169099)
 mesh = ExtResource("5_st4g4")
 
 [node name="RoadBendSquare" type="MeshInstance3D" parent="town" unique_id=1381338071]
-transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 56.5, 0.5, -7)
+transform = Transform3D(9.103624, 0, 0, 0, 8.590625, 0, 0, 0, 9.103624, -163.80185, 0.5, -28.25838)
 mesh = ExtResource("10_o2b8c")
+
+[node name="RoadStraight2" type="MeshInstance3D" parent="town" unique_id=636846311]
+transform = Transform3D(37.479275, 0, 0, 0, 8.754822, 0, 0, 0, 9.064594, -112.68478, 0.5, 65.984886)
+mesh = ExtResource("12_fn5if")
+
+[node name="RoadStraight3" type="MeshInstance3D" parent="town" unique_id=352035142]
+transform = Transform3D(-1.4847503e-06, 0, -9.064594, 0, 8.754821, 0, 33.967125, 0, -3.9622597e-07, -89.515656, 0.5, 45.229736)
+mesh = ExtResource("12_fn5if")
+
+[node name="RoadStraight4" type="MeshInstance3D" parent="town" unique_id=454182295]
+transform = Transform3D(-58.691277, 0, 7.924519e-07, 0, 8.75482, 0, -5.130955e-06, 0, -9.064593, -122.95131, 0.5, 24.662361)
+mesh = ExtResource("12_fn5if")
+
+[node name="RoadStraight5" type="MeshInstance3D" parent="town" unique_id=1383766342]
+transform = Transform3D(4.7195213e-06, 0, 9.064593, 0, 8.754821, 0, -35.990025, 0, 1.188678e-06, -163.7856, 0.5, -5.7680874)
+mesh = ExtResource("12_fn5if")
+
+[node name="RoadStraight6" type="MeshInstance3D" parent="town" unique_id=16424045]
+transform = Transform3D(35.990025, 0, -1.5849039e-06, 0, 8.754821, 0, 6.2926947e-06, 0, 9.064593, -186.05925, 0.5, -28.24113)
+mesh = ExtResource("12_fn5if")
 
 [node name="RoadBridge" type="MeshInstance3D" parent="town" unique_id=775445455]
 transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 30.5, 0.5, 39.5)
 mesh = ExtResource("11_by047")
-
-[node name="RoadStraight" type="MeshInstance3D" parent="town/RoadBridge" unique_id=441086510]
-transform = Transform3D(12.348004, 0, 0, 0, 1, 0, 0, 0, 1, -10.202001, 0, 3.7780137)
-mesh = ExtResource("12_fn5if")
 
 [node name="RoadCrossing" type="MeshInstance3D" parent="town" unique_id=1091386179]
 transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 78, 0.5, -4)
@@ -121,12 +251,20 @@ mesh = ExtResource("13_6j7ep")
 transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 37.5, 0.5, 6)
 mesh = ExtResource("14_t03bj")
 
+[node name="RoadIntersectionLine2" type="MeshInstance3D" parent="town" unique_id=1154643435]
+transform = Transform3D(-9.1499405, 0, 7.9991315e-07, 0, 9.277817, 0, -7.9991315e-07, 0, -9.1499405, -89.49518, 0.5, 65.9616)
+mesh = ExtResource("19_ja8vg")
+
+[node name="RoadIntersectionLine3" type="MeshInstance3D" parent="town" unique_id=325427224]
+transform = Transform3D(9.1499405, 0, -1.5998264e-06, 0, 9.277817, 0, 1.5998264e-06, 0, 9.1499405, -89.49518, 0.5, 24.644173)
+mesh = ExtResource("19_ja8vg")
+
 [node name="RoadCrossroadPath" type="MeshInstance3D" parent="town" unique_id=1882736270]
 transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 67.5, 0.5, 20.5)
 mesh = ExtResource("15_mvmqg")
 
 [node name="RoadCrossroad" type="MeshInstance3D" parent="town" unique_id=1713486800]
-transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 31.5, 0.5, 63)
+transform = Transform3D(9.257212, 0, 0, 0, 7.005, 0, 0, 0, 9.257212, -4.88398, 45.97946, -39.284836)
 mesh = ExtResource("16_1td6b")
 
 [node name="RoadCurveIntersection" type="MeshInstance3D" parent="town" unique_id=352094394]
@@ -134,7 +272,7 @@ transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 57.5, 0.5, 44.5)
 mesh = ExtResource("17_cytp2")
 
 [node name="RoadCurve" type="MeshInstance3D" parent="town" unique_id=1419212578]
-transform = Transform3D(-3.0619827e-07, 0, 7.005, 0, 7.005, 0, -7.005, 0, -3.0619827e-07, -91, 0.5, 49)
+transform = Transform3D(-3.934025e-07, 0, 9, 0, 9, 0, -9, 0, -3.934025e-07, 14.155571, 0.5, 43.577843)
 mesh = ExtResource("18_j850o")
 
 [node name="RoadIntersectionLine" type="MeshInstance3D" parent="town" unique_id=1438340618]
@@ -142,15 +280,15 @@ transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 35.5, 0.5, -9)
 mesh = ExtResource("19_ja8vg")
 
 [node name="RoadRoundabout" type="MeshInstance3D" parent="town" unique_id=631704700]
-transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, -94.5, 0.5, 66)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -163.77904, 0.5, 24.65959)
 mesh = ExtResource("20_sdrc6")
 
 [node name="RoadSlantCurve" type="MeshInstance3D" parent="town" unique_id=1523967193]
-transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 34.5, 0.41285872, 54.5)
+transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 34.5, 0.49999994, 54.5)
 mesh = ExtResource("21_y4mns")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="town" unique_id=1195131283]
-transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 34.5, 0.41285872, 54.5)
+transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 34.5, 0.49999994, 54.5)
 shape = SubResource("ConcavePolygonShape3D_2ckwc")
 
 [node name="RoadSlantFlatCurve" type="MeshInstance3D" parent="town" unique_id=1720813993]
@@ -162,5 +300,5 @@ transform = Transform3D(7.005, 0, 0, 0, 7.005, 0, 0, 0, 7.005, 52, 0.5, 64.5)
 mesh = ExtResource("23_1acan")
 
 [node name="RoadCurve2" type="MeshInstance3D" parent="town" unique_id=765399129]
-transform = Transform3D(9.185948e-07, 0, -7.005, 0, 7.005, 0, 7.005, 0, 9.185948e-07, -77, 0.5, 42)
+transform = Transform3D(6.794811e-07, 0, -9, 0, 9, 0, 9, 0, 6.794811e-07, -1.4563751, 0.5, 15.285988)
 mesh = ExtResource("18_j850o")

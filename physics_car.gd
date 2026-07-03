@@ -31,20 +31,20 @@ func _physics_process(delta: float) -> void:
 	apply_central_force(target_linear_acceleration)
 	
 
-	if abs(linear_velocity.x) > max_speed.x:
-		if linear_velocity.x < 0:
-			linear_velocity.x = max_speed.x * -1
-		else:
-			linear_velocity.x = max_speed.x
-			
-	if abs(linear_velocity.y) > max_speed.y:
-		if linear_velocity.y < 0:
-			linear_velocity.y = max_speed.y * -1
-		else:
-			linear_velocity.y = max_speed.y
-			
-	if abs(linear_velocity.z) > max_speed.z:
-		if linear_velocity.z < 0:
-			linear_velocity.z = max_speed.z * -1
-		else:
-			linear_velocity.z = max_speed.z
+	#if abs(linear_velocity.x) > max_speed.x:
+	#	if linear_velocity.x < 0:
+	#		linear_velocity.x = max_speed.x * -1
+	#	else:
+	#		linear_velocity.x = max_speed.x
+	#		
+	#if abs(linear_velocity.y) > max_speed.y:
+	#	if linear_velocity.y < 0:
+	#		linear_velocity.y = max_speed.y * -1
+	#	else:
+	#		linear_velocity.y = max_speed.y
+	#		
+	#if abs(linear_velocity.z) > max_speed.z:
+	#	if linear_velocity.z < 0:
+	#		linear_velocity.z = max_speed.z * -1
+	#	else:
+	#		linear_velocity.z = max_speed.z

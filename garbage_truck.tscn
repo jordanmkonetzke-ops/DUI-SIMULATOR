@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://0b26ifpat28h"]
+
+[ext_resource type="PackedScene" uid="uid://b0jk8sxawcbqy" path="res://Cars/Models/GLB format/garbage-truck.glb" id="1_2ixbb"]
+[ext_resource type="Script" uid="uid://c3jgm5abv75be" path="res://garbage_truck.gd" id="1_tbp23"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tbp23"]
+radius = 1.410179
+
+[node name="Garbage truck" type="RigidBody3D" unique_id=1774180963]
+script = ExtResource("1_tbp23")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1024867499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3329934, 0.889879)
+shape = SubResource("SphereShape3D_tbp23")
+
+[node name="garbage-truck" parent="." unique_id=1761444799 instance=ExtResource("1_2ixbb")]
+
+[node name="RayCast3D" type="RayCast3D" parent="garbage-truck" unique_id=1864629202]
+
+[editable path="garbage-truck"]
