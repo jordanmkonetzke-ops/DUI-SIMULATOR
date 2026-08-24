@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dbhli1i6uhfwr"]
+
+[ext_resource type="Script" uid="uid://5vg8in7ghssj" path="res://bal_lcar.gd" id="1_8w5w3"]
+[ext_resource type="PackedScene" uid="uid://b0jk8sxawcbqy" path="res://Cars/Models/GLB format/garbage-truck.glb" id="2_wywtu"]
+[ext_resource type="PackedScene" uid="uid://6e7k025klek0" path="res://Cars/Models/GLB format/suv.glb" id="3_wywtu"]
+[ext_resource type="PackedScene" uid="uid://dfl8ceg7bbumf" path="res://Cars/Models/FBX format/suv.fbx" id="4_t27o6"]
+[ext_resource type="Script" uid="uid://bleug0a1tmwqb" path="res://3rdpersoncamera.gd" id="5_clul6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t27o6"]
+bounce = 0.14
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t27o6"]
+radius = 1.0
+
+[node name="BALLcar" type="RigidBody3D" unique_id=1016830078]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 1.378
+physics_material_override = SubResource("PhysicsMaterial_t27o6")
+angular_damp = 10.0
+script = ExtResource("1_8w5w3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1498318165]
+shape = SubResource("SphereShape3D_t27o6")
+
+[node name="garbage-truck" parent="." unique_id=1412373443 instance=ExtResource("2_wywtu")]
+visible = false
+
+[node name="suv" parent="." unique_id=16217971 instance=ExtResource("3_wywtu")]
+visible = false
+
+[node name="suv2" parent="." unique_id=1787170224 instance=ExtResource("4_t27o6")]
+
+[node name="RayCast3D" type="RayCast3D" parent="suv2" unique_id=531986004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9413458, 0)
+debug_shape_custom_color = Color(1, 0.120000005, 0.8973332, 1)
+debug_shape_thickness = 5
+
+[node name="camera pivot" type="Node3D" parent="suv2" unique_id=280623975]
+transform = Transform3D(-1, 1.9963066e-08, -8.511297e-08, 0, 0.97357893, 0.22835086, 8.742278e-08, 0.22835086, -0.97357893, 0, 1.61, 0)
+script = ExtResource("5_clul6")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="suv2/camera pivot" unique_id=304415113]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="suv2/camera pivot/SpringArm3D" unique_id=928727561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.94)
+fov = 100.2
+
+[editable path="garbage-truck"]
+[editable path="suv"]
+[editable path="suv2"]
