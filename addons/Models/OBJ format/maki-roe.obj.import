@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ffn0uwsude0e"
+path="res://.godot/imported/maki-roe.obj-a1e45896d8d4a6969d72d2118867529e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/maki-roe.obj-a1e45896d8d4a6969d72d2118867529e.mesh"]
+
+source_file="res://addons/Models/OBJ format/maki-roe.obj"
+dest_files=["res://.godot/imported/maki-roe.obj-a1e45896d8d4a6969d72d2118867529e.mesh", "res://.godot/imported/maki-roe.obj-a1e45896d8d4a6969d72d2118867529e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

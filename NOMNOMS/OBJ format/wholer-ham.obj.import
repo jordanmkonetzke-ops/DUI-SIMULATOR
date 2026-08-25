@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4abs5e686kso"
+path="res://.godot/imported/wholer-ham.obj-b29d9a4cae2bab21044ee5b5d01081eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wholer-ham.obj-b29d9a4cae2bab21044ee5b5d01081eb.mesh"]
+
+source_file="res://NOMNOMS/OBJ format/wholer-ham.obj"
+dest_files=["res://.godot/imported/wholer-ham.obj-b29d9a4cae2bab21044ee5b5d01081eb.mesh", "res://.godot/imported/wholer-ham.obj-b29d9a4cae2bab21044ee5b5d01081eb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

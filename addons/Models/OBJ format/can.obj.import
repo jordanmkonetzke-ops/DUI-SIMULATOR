@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drbe76wmhbthl"
+path="res://.godot/imported/can.obj-2ac8cb1ff84d6b4e33d2037dc6069bec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/can.obj-2ac8cb1ff84d6b4e33d2037dc6069bec.mesh"]
+
+source_file="res://addons/Models/OBJ format/can.obj"
+dest_files=["res://.godot/imported/can.obj-2ac8cb1ff84d6b4e33d2037dc6069bec.mesh", "res://.godot/imported/can.obj-2ac8cb1ff84d6b4e33d2037dc6069bec.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

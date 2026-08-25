@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbiqm7iu0lviv"
+path="res://.godot/imported/advocado-half.obj-2032aae70e8c8bfb3810fb1ed93f211d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/advocado-half.obj-2032aae70e8c8bfb3810fb1ed93f211d.mesh"]
+
+source_file="res://NOMNOMS/OBJ format/advocado-half.obj"
+dest_files=["res://.godot/imported/advocado-half.obj-2032aae70e8c8bfb3810fb1ed93f211d.mesh", "res://.godot/imported/advocado-half.obj-2032aae70e8c8bfb3810fb1ed93f211d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

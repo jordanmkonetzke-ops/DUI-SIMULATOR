@@ -24,6 +24,8 @@
 [ext_resource type="ArrayMesh" uid="uid://butd7grt3hh80" path="res://roads/Models/OBJ format/road-slant-flat-curve.obj" id="22_ukafd"]
 [ext_resource type="ArrayMesh" uid="uid://buu8uc4emoejq" path="res://roads/Models/OBJ format/road-split.obj" id="23_1acan"]
 [ext_resource type="PackedScene" uid="uid://dbhli1i6uhfwr" path="res://ballcar.tscn" id="25_hu7bf"]
+[ext_resource type="PackedScene" uid="uid://db55sut6c6csa" path="res://hud.tscn" id="25_st4g4"]
+[ext_resource type="PackedScene" uid="uid://l0s6g50h0lf6" path="res://alcohol.tscn" id="26_st4g4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d15k1"]
 
@@ -160,3 +162,8 @@ mesh = ExtResource("23_1acan")
 
 [node name="BALLcar" parent="." unique_id=1016830078 instance=ExtResource("25_hu7bf")]
 transform = Transform3D(-0.012217023, 0, -0.9999254, 0, 1, 0, 0.9999254, 0, -0.012217023, -13.112339, 1.8285975, 66.28319)
+
+[node name="HUD" parent="." unique_id=415944585 instance=ExtResource("25_st4g4")]
+
+[node name="Alcohol" parent="." unique_id=1636727288 instance=ExtResource("26_st4g4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.816853, 0, 67.23559)

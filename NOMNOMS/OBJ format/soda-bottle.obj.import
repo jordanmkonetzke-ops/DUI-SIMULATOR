@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d07gfib873f2t"
+path="res://.godot/imported/soda-bottle.obj-791ef44b9b8fc8b39a9f8e654379916f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/soda-bottle.obj-791ef44b9b8fc8b39a9f8e654379916f.mesh"]
+
+source_file="res://NOMNOMS/OBJ format/soda-bottle.obj"
+dest_files=["res://.godot/imported/soda-bottle.obj-791ef44b9b8fc8b39a9f8e654379916f.mesh", "res://.godot/imported/soda-bottle.obj-791ef44b9b8fc8b39a9f8e654379916f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

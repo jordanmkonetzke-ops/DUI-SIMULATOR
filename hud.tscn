@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://db55sut6c6csa"]
+
+[ext_resource type="Texture2D" uid="uid://bbwsx50wng4xa" path="res://COOOOOOOOL S.png" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://ni0tgws2b1b7" path="res://7segment.ttf" id="2_64ctp"]
+
+[sub_resource type="Theme" id="Theme_8sq4i"]
+default_font = ExtResource("2_64ctp")
+
+[node name="HUD" type="CanvasLayer" unique_id=415944585]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1720819936]
+custom_minimum_size = Vector2(1, 0)
+offset_left = 875.0
+offset_top = -24.0
+offset_right = 1195.0
+offset_bottom = 296.0
+texture = ExtResource("1_37p78")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1232560034]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1041.0
+offset_top = -193.0
+offset_right = 1112.0
+offset_bottom = -152.0
+grow_vertical = 2
+theme = SubResource("Theme_8sq4i")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "0.00"
+horizontal_alignment = 3
+vertical_alignment = 2

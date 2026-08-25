@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgsket8jkne3g"
+path="res://.godot/imported/chocolate-wrapper.obj-a2eda4cf3ef09553e9e4b171dbbc5c90.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chocolate-wrapper.obj-a2eda4cf3ef09553e9e4b171dbbc5c90.mesh"]
+
+source_file="res://addons/Models/OBJ format/chocolate-wrapper.obj"
+dest_files=["res://.godot/imported/chocolate-wrapper.obj-a2eda4cf3ef09553e9e4b171dbbc5c90.mesh", "res://.godot/imported/chocolate-wrapper.obj-a2eda4cf3ef09553e9e4b171dbbc5c90.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

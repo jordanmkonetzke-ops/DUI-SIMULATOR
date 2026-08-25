@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqo5uyoxddgic"
+path="res://.godot/imported/chopstic-decorative.obj-cfd8fa76738fed97d32b7464e8ce5e1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/chopstic-decorative.obj-cfd8fa76738fed97d32b7464e8ce5e1e.mesh"]
+
+source_file="res://NOMNOMS/OBJ format/chopstic-decorative.obj"
+dest_files=["res://.godot/imported/chopstic-decorative.obj-cfd8fa76738fed97d32b7464e8ce5e1e.mesh", "res://.godot/imported/chopstic-decorative.obj-cfd8fa76738fed97d32b7464e8ce5e1e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

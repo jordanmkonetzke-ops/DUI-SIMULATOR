@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjssf4awya6uh"
+path="res://.godot/imported/corn.obj-9d6a6392e33c589ca75630c0fb3a92c5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/corn.obj-9d6a6392e33c589ca75630c0fb3a92c5.mesh"]
+
+source_file="res://NOMNOMS/OBJ format/corn.obj"
+dest_files=["res://.godot/imported/corn.obj-9d6a6392e33c589ca75630c0fb3a92c5.mesh", "res://.godot/imported/corn.obj-9d6a6392e33c589ca75630c0fb3a92c5.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
