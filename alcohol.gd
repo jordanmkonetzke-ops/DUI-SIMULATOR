@@ -20,7 +20,10 @@ var itemarray: Array[Resource]=[
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var new_item = itemarray.pick_random().instantiate()
+	$Sprite3D.visible=false
 	pivot.add_child(new_item)
+	new_item.scale*=2.5
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

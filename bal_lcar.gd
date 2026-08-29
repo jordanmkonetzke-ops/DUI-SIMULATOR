@@ -13,6 +13,7 @@ var turn_stop_limit=0.75
 var speed_input=0
 var turn_input=0
 var body_tilt = -35
+var fovspeed=0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,12 +21,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var temp = abs(linear_velocity)/2
+	fovspeed=lerpf(fovspeed,temp.x+temp.z,0.1)
 	if not ground_ray.is_colliding():
 		return
 	speed_input = Input.get_axis("accelerate","brake")*acceleration
 	turn_input = Input.get_axis("turn right","turn left")*deg_to_rad(steering)
 	right_wheel.rotation.y = turn_input
 	left_wheel.rotation.y = turn_input
+	$"suv2/camera pivot/SpringArm3D/Camera3D".fov=85+clampf(fovspeed,0,50)
+	
 	
 	if linear_velocity.length()>turn_stop_limit:
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input)

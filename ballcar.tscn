@@ -5,12 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://6e7k025klek0" path="res://Cars/Models/GLB format/suv.glb" id="3_wywtu"]
 [ext_resource type="PackedScene" uid="uid://dfl8ceg7bbumf" path="res://Cars/Models/FBX format/suv.fbx" id="4_t27o6"]
 [ext_resource type="Script" uid="uid://bleug0a1tmwqb" path="res://3rdpersoncamera.gd" id="5_clul6"]
+[ext_resource type="Texture2D" uid="uid://efpn0lxnrl53" path="res://icon.svg" id="6_7475l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t27o6"]
 bounce = 0.14
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t27o6"]
 radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjg17"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.3529412)
+albedo_texture = ExtResource("6_7475l")
+
+[sub_resource type="SphereMesh" id="SphereMesh_vkrah"]
+material = SubResource("StandardMaterial3D_vjg17")
+radius = 1.0
+height = 2.0
 
 [node name="BALLcar" type="RigidBody3D" unique_id=1016830078]
 axis_lock_angular_x = true
@@ -34,6 +45,7 @@ visible = false
 
 [node name="RayCast3D" type="RayCast3D" parent="suv2" unique_id=531986004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9413458, 0)
+target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(1, 0.120000005, 0.8973332, 1)
 debug_shape_thickness = 5
 
@@ -46,7 +58,10 @@ spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="suv2/camera pivot/SpringArm3D" unique_id=928727561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.94)
-fov = 100.2
+fov = 85.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2035722248]
+mesh = SubResource("SphereMesh_vkrah")
 
 [editable path="garbage-truck"]
 [editable path="suv"]

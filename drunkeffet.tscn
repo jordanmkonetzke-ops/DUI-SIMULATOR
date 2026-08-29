@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://w7k0ge2sgghj"]
+
+[ext_resource type="Shader" uid="uid://bogdino4owbrj" path="res://blurshader.gdshader" id="1_5l7om"]
+[ext_resource type="Script" uid="uid://b1rfylcwdpvt2" path="res://drunkeffet.gd" id="2_k1hr0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1hr0"]
+shader = ExtResource("1_5l7om")
+shader_parameter/intensity = 2.0
+shader_parameter/falloff = 0.5
+shader_parameter/samples = 16
+shader_parameter/center = Vector2(0.5, 0.5)
+
+[node name="drunkeffet" type="SubViewportContainer" unique_id=776780707]
+material = SubResource("ShaderMaterial_k1hr0")
+offset_right = 1151.0
+offset_bottom = 652.0
+script = ExtResource("2_k1hr0")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=792549747]
+handle_input_locally = false
+size = Vector2i(10000, 10000)
+render_target_update_mode = 4

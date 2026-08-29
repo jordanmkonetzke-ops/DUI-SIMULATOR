@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Jordan DUI simulator"
 run/main_scene="uid://dwe4k2yite8y6"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [editor]
