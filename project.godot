@@ -15,10 +15,19 @@ run/main_scene="uid://dwe4k2yite8y6"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalManager="*uid://l6cj6yeu18ri"
+AudioManager="*uid://cabtrljue5q8v"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/asset_placer/plugin.cfg", "res://addons/sky_3d/plugin.cfg")
 
 [input]
 

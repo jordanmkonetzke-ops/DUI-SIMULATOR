@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cabtrljue5q8v"]
+
+[ext_resource type="AudioStream" uid="uid://csdlxn561t5vx" path="res://Shlorp_VoiceLines/Shlorp.wav" id="1_jisk1"]
+[ext_resource type="Script" uid="uid://bj6o7sns2jr3n" path="res://audio_manager.gd" id="2_bq1v2"]
+
+[node name="AudioManager" type="AudioStreamPlayer" unique_id=1496643285]
+stream = ExtResource("1_jisk1")
+script = ExtResource("2_bq1v2")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

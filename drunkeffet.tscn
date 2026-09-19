@@ -10,6 +10,12 @@ shader_parameter/falloff = 0.5
 shader_parameter/samples = 16
 shader_parameter/center = Vector2(0.5, 0.5)
 
+[sub_resource type="Curve2D" id="Curve2D_k1hr0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -360, 4.8315306, -363.9753, -4.8315306, 363.9753, 360, 2, 0, 0, 0, 0, 0, 360, -1.6105102, 359.14377, 1.6105102, -359.14377, -360, 0, 0, 0, 0, 0, 0, -360)
+}
+point_count = 5
+
 [node name="drunkeffet" type="SubViewportContainer" unique_id=776780707]
 material = SubResource("ShaderMaterial_k1hr0")
 offset_right = 1151.0
@@ -20,3 +26,11 @@ script = ExtResource("2_k1hr0")
 handle_input_locally = false
 size = Vector2i(10000, 10000)
 render_target_update_mode = 4
+
+[node name="Path2D" type="Path2D" parent="." unique_id=927589176]
+curve = SubResource("Curve2D_k1hr0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=412894192]
+position = Vector2(355.86102, -68.97402)
+rotation = 1.4344251
+progress = 503.68073
