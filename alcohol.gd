@@ -48,56 +48,41 @@ func _process(delta: float) -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	GlobalManager.alcohol_level+=1
+	GlobalManager.alcohol_level+=0.004
 	GlobalManager.alcohol_combo+=1
 	GlobalManager.alcohol_reset_combo_timer.stop()
-	GlobalManager.alcohol_reset_combo_timer.start(5.0)
+	GlobalManager.alcohol_reset_combo_timer.start(2.0)
 	
-	match GlobalManager.alcohol_combo:#TODO: fix sound queue in aduio manager
+	match GlobalManager.alcohol_combo:
 		1: 
 			AudioManager.add_sound_to_queue(SHLORP)
 		2:
-			AudioManager.stream=DOUBLE_SHLORP
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(DOUBLE_SHLORP)
 		3:
-			AudioManager.stream=TRIPLE_SHLORP
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(TRIPLE_SHLORP)
 		4:
-			AudioManager.stream=OVER_SHLORP
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(OVER_SHLORP)
 		5:
-			AudioManager.stream=SHLORP_TACULAR
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORP_TACULAR)
 		6:
-			AudioManager.stream=SHLORP_TROCITY
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORP_TROCITY)
 		7:
-			AudioManager.stream=SHLORPIMANJARO
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORPIMANJARO)
 		8:
-			AudioManager.stream=SUPER_SHLORPER
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SUPER_SHLORPER)
 		9:
-			AudioManager.stream=SHLORP_APOCALYPSE
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORP_APOCALYPSE)
 		10:
-			AudioManager.stream=SHLORP_BILLONARE
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORP_BILLONARE)
 		11:
-			AudioManager.stream=SHLOR_BLAST
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLOR_BLAST)
 		12:
-			AudioManager.stream=SHLORP_JYNXIZ
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORP_JYNXIZ)
 		13:
-			AudioManager.stream=SHLORPFINITY
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(SHLORPFINITY)
 		14:
-			AudioManager.stream=HALO_SHLORPER
-			AudioManager.play()
+			AudioManager.add_sound_to_queue(HALO_SHLORPER)
 		_:
-			AudioManager.stream=SHLORP
-			AudioManager.play()
-
+			AudioManager.add_sound_to_queue(SHLORP)
 		
 	queue_free()

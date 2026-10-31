@@ -1,8 +1,16 @@
 extends Node
+signal alcohol_level_changed(new_alcohol_level: float)
 
-var alcohol_level:float=0.0
+var alcohol_level:float=0.0:
+	set(value):
+		if alcohol_level != value:
+			alcohol_level = value
+			emit_signal("alcohol_level_changed", alcohol_level)
+			
 var alcohol_reset_combo_timer:Timer=Timer.new()
 var alcohol_combo:int=0
+
+var timeofday
 
 
 

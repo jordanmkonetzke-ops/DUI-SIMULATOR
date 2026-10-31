@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://db55sut6c6csa"]
 
+[ext_resource type="Script" uid="uid://r7inky1uoirx" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="Texture2D" uid="uid://bbwsx50wng4xa" path="res://COOOOOOOOL S.png" id="1_37p78"]
 [ext_resource type="FontFile" uid="uid://ni0tgws2b1b7" path="res://7segment.ttf" id="2_64ctp"]
 
@@ -7,6 +8,7 @@
 default_font = ExtResource("2_64ctp")
 
 [node name="HUD" type="CanvasLayer" unique_id=415944585]
+script = ExtResource("1_8sq4i")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1720819936]
 custom_minimum_size = Vector2(1, 0)

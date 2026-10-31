@@ -43,6 +43,65 @@ visible = false
 
 [node name="suv2" parent="." unique_id=1787170224 instance=ExtResource("4_t27o6")]
 
+[node name="AreaLight3D_winshield" type="AreaLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="1" unique_id=864902520]
+transform = Transform3D(-1, 5.7469567e-08, 6.58786e-08, 0, -0.7535634, 0.6573752, 8.742278e-08, 0.6573752, 0.7535634, 0.005084425, 0.7694116, 0.52833444)
+visible = false
+light_energy = 5.117
+light_size = 0.292
+area_range = 0.025
+area_size = Vector2(0.8684227, 0.40203595)
+
+[node name="AreaLight3D_back" type="AreaLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="2" unique_id=1693871554]
+transform = Transform3D(1, 0, 0, 0, -0.9563047, 0.29237178, 0, -0.29237178, -0.9563047, 0, 0.93029314, -1.0280083)
+visible = false
+light_energy = 0.532
+area_range = 0.016
+area_size = Vector2(0.78234684, 0.19410253)
+
+[node name="AreaLight3D_leftwindow" type="AreaLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="3" unique_id=1189896118]
+transform = Transform3D(-4.371139e-08, -0.12013685, 0.9927574, 0, 0.9927574, 0.12013685, -1, 5.2513487e-09, -4.3394802e-08, 0.5850189, 0.79004484, 0.13524503)
+visible = false
+area_range = 0.084
+area_size = Vector2(0.28791243, 0.31059682)
+
+[node name="AreaLight3D_rightwindow" type="AreaLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="4" unique_id=578256766]
+transform = Transform3D(-4.371139e-08, -0.12013683, -0.9927574, 0, -0.9927574, 0.12013683, -1, 5.2513474e-09, 4.3394802e-08, -0.55300903, 0.7591018, 0.13524503)
+visible = false
+area_range = 0.084
+area_size = Vector2(0.28791243, 0.27931428)
+
+[node name="SpotLight3D_leftheadlight" type="SpotLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="5" unique_id=1701066645]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.40668488, 0.45184296, 1.1856866)
+visible = false
+light_color = Color(0.9999996, 0.81650937, 0.4148826, 1)
+light_energy = 3.526
+spot_range = 50.0
+spot_angle = 25.803919
+
+[node name="SpotLight3D_leftheadlight2" type="SpotLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="6" unique_id=480446567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40351945, 0.45184296, 1.4489048)
+visible = false
+light_color = Color(0.9999996, 0.81650937, 0.4148826, 1)
+light_energy = 3.526
+spot_range = 0.233
+spot_angle = 25.803919
+
+[node name="SpotLight3D_rightheadlight" type="SpotLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="7" unique_id=1191629887]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.43649763, 0.45184296, 1.1856866)
+visible = false
+light_color = Color(0.9999996, 0.81650937, 0.4148826, 1)
+light_energy = 3.526
+spot_range = 50.0
+spot_angle = 25.803919
+
+[node name="SpotLight3D_rightheadlight2" type="SpotLight3D" parent="suv2/suv/body" parent_id_path=PackedInt32Array(1787170224, 1090919277) index="8" unique_id=1905085430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41706812, 0.45200002, 1.449)
+visible = false
+light_color = Color(0.9999996, 0.81650937, 0.4148826, 1)
+light_energy = 3.526
+spot_range = 0.233
+spot_angle = 25.803919
+
 [node name="RayCast3D" type="RayCast3D" parent="suv2" unique_id=531986004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9413458, 0)
 target_position = Vector3(0, -2, 0)
@@ -50,7 +109,7 @@ debug_shape_custom_color = Color(1, 0.120000005, 0.8973332, 1)
 debug_shape_thickness = 5
 
 [node name="camera pivot" type="Node3D" parent="suv2" unique_id=280623975]
-transform = Transform3D(-1, 1.9963066e-08, -8.511297e-08, 0, 0.97357893, 0.22835086, 8.742278e-08, 0.22835086, -0.97357893, 0, 1.61, 0)
+transform = Transform3D(-1, 3.448002e-08, -1.4700633e-07, 0, 0.97357893, 0.22835086, 1.509958e-07, 0.22835086, -0.97357893, 0, 1.61, 0)
 script = ExtResource("5_clul6")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="suv2/camera pivot" unique_id=304415113]
@@ -60,8 +119,24 @@ spring_length = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.94)
 fov = 85.0
 
+[node name="Timer" type="Timer" parent="suv2/camera pivot" unique_id=24053675]
+wait_time = 0.5
+autostart = true
+
+[node name="Timer2" type="Timer" parent="suv2/camera pivot" unique_id=218595388]
+wait_time = 0.5
+autostart = true
+
+[node name="Timer3" type="Timer" parent="suv2/camera pivot" unique_id=152177706]
+wait_time = 0.5
+autostart = true
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2035722248]
 mesh = SubResource("SphereMesh_vkrah")
+
+[connection signal="timeout" from="suv2/camera pivot/Timer" to="suv2/camera pivot" method="_on_timer_timeout"]
+[connection signal="timeout" from="suv2/camera pivot/Timer2" to="suv2/camera pivot" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="suv2/camera pivot/Timer3" to="suv2/camera pivot" method="_on_timer_3_timeout"]
 
 [editable path="garbage-truck"]
 [editable path="suv"]

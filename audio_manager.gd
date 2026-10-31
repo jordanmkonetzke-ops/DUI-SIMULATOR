@@ -17,7 +17,8 @@ func _on_finished() -> void:
 		play()
 
 func add_sound_to_queue(sound):
-	if !audio_queue.is_empty() or !playing:
+	if !audio_queue.is_empty() or playing:
+		print("added this sound to queue:" + str(sound))
 		audio_queue.push_front(sound)
 	else:
 		stream=sound
