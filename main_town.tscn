@@ -1,16 +1,23 @@
-[gd_scene format=3 uid="uid://dwe4k2yite8y6"]
+[gd_scene format=4 uid="uid://dwe4k2yite8y6"]
 
 [ext_resource type="PackedScene" uid="uid://w7k0ge2sgghj" path="res://drunkeffet.tscn" id="1_hv3ej"]
 [ext_resource type="Script" uid="uid://cv4s56px4ufx1" path="res://main_town.gd" id="1_j850o"]
-[ext_resource type="Texture2D" uid="uid://bar51n8ayl04d" path="res://13075.jpg" id="2_6dehh"]
 [ext_resource type="Texture2D" uid="uid://efpn0lxnrl53" path="res://icon.svg" id="2_6etiv"]
+[ext_resource type="Texture2D" uid="uid://dajw3s0ma852i" path="res://townjordanduigame.png" id="5_cmh5y"]
 [ext_resource type="PackedScene" uid="uid://dcws772u1c2c7" path="res://roads/Models/GLB format/road-straight.glb" id="6_qh43i"]
-[ext_resource type="PackedScene" uid="uid://ddf5nsfu0ghnh" path="res://roads/Models/GLB format/road-curve-intersection.glb" id="19_cmh5y"]
+[ext_resource type="PackedScene" uid="uid://d1btflyfxo0mi" path="res://roads/Models/GLB format/road-intersection-path.glb" id="20_6etiv"]
 [ext_resource type="PackedScene" uid="uid://dpx5kk8x2tyty" path="res://roads/Models/GLB format/road-curve.glb" id="20_h068y"]
-[ext_resource type="PackedScene" uid="uid://bp3cii0ttdcof" path="res://roads/Models/GLB format/road-end-round.glb" id="21_2ckwc"]
+[ext_resource type="PackedScene" uid="uid://cwfkof8t4j013" path="res://roads/Models/GLB format/road-intersection.glb" id="21_hv3ej"]
+[ext_resource type="PackedScene" uid="uid://c8pop76gyiaht" path="res://roads/Models/GLB format/road-bend.glb" id="22_iy4cx"]
+[ext_resource type="PackedScene" uid="uid://jv1tjhomqmia" path="res://roads/Models/GLB format/road-straight-half.glb" id="23_ic2ps"]
+[ext_resource type="PackedScene" uid="uid://cwfklvxabedxd" path="res://roads/Models/GLB format/road-roundabout.glb" id="24_o2b8c"]
+[ext_resource type="PackedScene" uid="uid://kwupwlqsji3d" path="res://roads/Models/GLB format/road-split.glb" id="25_by047"]
 [ext_resource type="PackedScene" uid="uid://dbhli1i6uhfwr" path="res://ballcar.tscn" id="25_hu7bf"]
 [ext_resource type="PackedScene" uid="uid://db55sut6c6csa" path="res://hud.tscn" id="25_st4g4"]
+[ext_resource type="PackedScene" uid="uid://clwsl0oqr778b" path="res://roads/Models/GLB format/road-slant.glb" id="26_hv3ej"]
+[ext_resource type="PackedScene" uid="uid://8a2o6lnr7uub" path="res://roads/Models/GLB format/tile-high.glb" id="27_6j7ep"]
 [ext_resource type="Shader" uid="uid://cvd0x7lon1ur6" path="res://addons/sky_3d/shaders/SkyMaterial.gdshader" id="28_1td6b"]
+[ext_resource type="Texture2D" uid="uid://n0mu3cc78cg4" path="res://roads/Models/GLB format/Textures/colormap.png" id="28_iy4cx"]
 [ext_resource type="Texture2D" uid="uid://cfqk60lpl5ljv" path="res://addons/sky_3d/assets/resources/SNoise.tres" id="29_cytp2"]
 [ext_resource type="Texture2D" uid="uid://cecwdqjol0ckd" path="res://addons/sky_3d/assets/textures/noiseClouds.png" id="30_j850o"]
 [ext_resource type="Texture2D" uid="uid://2r8ylu6rg5dp" path="res://addons/sky_3d/assets/thirdparty/textures/moon/MoonMap.png" id="31_ja8vg"]
@@ -33,14 +40,19 @@ height = 1000.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d15k1"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ic2ps"]
+size = Vector3(1, 0.25, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ojoh2"]
 size = Vector3(80, 1, 80)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hu7bf"]
 albedo_color = Color(0.63, 1, 0.6916666, 1)
-albedo_texture = ExtResource("2_6dehh")
+albedo_texture = ExtResource("5_cmh5y")
 metallic = 1.0
 metallic_specular = 1.0
+uv1_scale = Vector3(2.545, 2.545, 2.545)
+uv1_offset = Vector3(-0.765, 0.62, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nlr1t"]
 material = SubResource("StandardMaterial3D_hu7bf")
@@ -99,8 +111,8 @@ shader_parameter/cirrus_absorption = 2.0
 shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.2329671, 0.2329671)
-shader_parameter/cirrus_position2 = Vector2(0.2329671, 0.2329671)
+shader_parameter/cirrus_position1 = Vector2(0.8780526, 0.8780526)
+shader_parameter/cirrus_position2 = Vector2(0.8780526, 0.8780526)
 shader_parameter/cirrus_texture = ExtResource("29_cytp2")
 shader_parameter/cumulus_visible = true
 shader_parameter/cumulus_intensity = 0.6
@@ -110,7 +122,7 @@ shader_parameter/cumulus_absorption = 2.0
 shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(11.177196, 11.177196)
+shader_parameter/cumulus_position = Vector2(14.415626, 14.415626)
 shader_parameter/cumulus_texture = ExtResource("30_j850o")
 shader_parameter/cumulus_partial_mie_phase = Vector3(0.957564, 1.042436, 0.412)
 shader_parameter/cumulus_mie_intensity = 1.0
@@ -136,6 +148,44 @@ tonemap_white = 6.0
 volumetric_fog_density = 1.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ja8vg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl7dk"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("28_iy4cx")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jwu4l"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAAAAgAEAAAAAAAFAAMAAwAGAAIABwAFAAAAAwAFAAcAAAAEAAcABwAGAAMABwAEAAIAAgAGAAcA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAD/////AAAAAP//AAAAAAAAAAD//wAAAAD//wAA//8AAAAA/////wAAAAAAAAAAAAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qcrj8"]
+resource_name = "tile-high_tile-high"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"attribute_data": PackedByteArray("/+f/3//n/9//5//f/+f/3//n/9//5//f/+f/3//n/9//5//f/+f/3//n/9//5//f/+f/3//n/9//5//f/+f/3//n/9//5//f/+f/3//n/9//5//f/+f/3//n/9//5//f"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_kl7dk"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////////7//////AAD/v///AAAAAP+///8AAP///78AAAAA////v///AAD///+///8AAAAA/78AAAAAAAD/vwAA//8AAP//AAAAAAAA/////wAAAAD///////8AAP//////////AID//wAA//8AgAAAAAD//wCAAAD/////AIAAAP//AAD///////8AAP////////////8AAP///////wAAAAD///+/AAAAAAAA/78AAP//AAD/vwAA//////+//38AAP9/AAD/fwAA/38AAAAA/38AAP9/AAD/fwAA/3//f////3////9/////f////3////9/////f////3////9//7//f/+//3//v/9//7//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jwu4l")
 
 [node name="Main town" type="Node3D" unique_id=1524760746]
 script = ExtResource("1_j850o")
@@ -165,11 +215,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1716022, 58.37578)
 transform = Transform3D(6.592772, 0, 0, 0, 1, 0, 0, 0, 6.047064, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_d15k1")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Floor" unique_id=1990192642]
+transform = Transform3D(1.3651315, 0, 0, 0, 9, 0, 0, 0, 1.4883257, -11.679458, 1.6249995, 22.986364)
+shape = SubResource("BoxShape3D_ic2ps")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1325537776]
 shape = SubResource("BoxShape3D_ojoh2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2105546632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000006, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000007, 0, 0, 0)
 mesh = SubResource("BoxMesh_nlr1t")
 
 [node name="town" type="StaticBody3D" parent="." unique_id=1977541848]
@@ -213,40 +267,213 @@ minutes_per_day = 5.0
 [node name="Alcohol" parent="." unique_id=1636727288 instance=ExtResource("38_cytp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78057516, 64.25198)
 
-[node name="road-straight2 (1)" type="Node3D" parent="." unique_id=1375983530 instance=ExtResource("6_qh43i")]
-transform = Transform3D(2.861023e-06, 0, -8.999987, 0, 9, 0, 8.999987, 0, 2.861023e-06, 4, 0.5, 56)
+[node name="road-straight2" type="Node3D" parent="." unique_id=1375983530 instance=ExtResource("6_qh43i")]
+transform = Transform3D(1.66893e-06, 0, 8.8209, 0, 8.8209, 0, -8.8209, 0, 1.66893e-06, -95, 0.5, 198)
 metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
 
-[node name="road-straight2 (2)" type="Node3D" parent="." unique_id=737795761 instance=ExtResource("6_qh43i")]
-transform = Transform3D(2.861027e-06, 0, -9, 0, 9, 0, 9, 0, 2.861027e-06, 4, 0.5, 65)
+[node name="road-straight2 (2)" type="Node3D" parent="." unique_id=1152533616 instance=ExtResource("6_qh43i")]
+transform = Transform3D(1.66893e-06, 0, 8.8209, 0, 8.8209, 0, -8.8209, 0, 1.66893e-06, -95, 0.5, 190)
 metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
 
-[node name="road-straight2 (3)" type="Node3D" parent="." unique_id=44597684 instance=ExtResource("6_qh43i")]
-transform = Transform3D(2.861027e-06, 0, -9, 0, 9, 0, 9, 0, 2.861027e-06, 4, 0.49999905, 74)
+[node name="road-straight2 (2)2" type="Node3D" parent="." unique_id=1432553678 instance=ExtResource("6_qh43i")]
+transform = Transform3D(1.66893e-06, 0, 8.8209, 0, 8.8209, 0, -8.8209, 0, 1.66893e-06, -95, 0.5, 182)
 metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
 
-[node name="road-straight2 (3)2" type="Node3D" parent="." unique_id=567738162 instance=ExtResource("6_qh43i")]
-transform = Transform3D(0, 0, 8.999999, 0, 9, 0, -8.999999, 0, 0, 4, 0.5, 83)
+[node name="road-straight2 (3)" type="Node3D" parent="." unique_id=1168925290 instance=ExtResource("6_qh43i")]
+transform = Transform3D(1.66893e-06, 0, 8.8209, 0, 8.8209, 0, -8.8209, 0, 1.66893e-06, -95, 0.5000019, 174)
 metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
 
-[node name="road-curve-intersection2" type="Node3D" parent="." unique_id=909030770 instance=ExtResource("19_cmh5y")]
-transform = Transform3D(-8.999999, 0, 0, 0, 9, 0, 0, 0, -8.999999, 8.5, 0.4999962, 96)
-metadata/asset_placer_res_id = "uid://ddf5nsfu0ghnh"
-
-[node name="road-curve2" type="Node3D" parent="." unique_id=86616429 instance=ExtResource("20_h068y")]
-transform = Transform3D(0, 0, 8.999999, 0, 9, 0, -8.999999, 0, 0, -9.5, 0.5, 105)
+[node name="road-curve2 (1)" type="Node3D" parent="." unique_id=2121656198 instance=ExtResource("20_h068y")]
+transform = Transform3D(1.1920929e-06, 0, -9.000007, 0, 9, 0, 9.000007, 0, 1.1920929e-06, -81.5, 0.49999905, 161.5)
 metadata/asset_placer_res_id = "uid://dpx5kk8x2tyty"
 
-[node name="road-end-round2" type="Node3D" parent="." unique_id=258514280 instance=ExtResource("21_2ckwc")]
-transform = Transform3D(-8.999999, 0, 0, 0, 9, 0, 0, 0, -8.999999, 22, 0.5, 100.5)
-metadata/asset_placer_res_id = "uid://bp3cii0ttdcof"
+[node name="road-intersection-path2" type="Node3D" parent="." unique_id=1640536035 instance=ExtResource("20_6etiv")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -95, 0.5, 166)
+metadata/asset_placer_res_id = "uid://d1btflyfxo0mi"
 
-[node name="road-end-round2 (1)" type="Node3D" parent="." unique_id=1739436228 instance=ExtResource("21_2ckwc")]
-transform = Transform3D(0, 0, 8.999999, 0, 9, 0, -8.999999, 0, 0, -14, 0.4999962, 118.5)
-metadata/asset_placer_res_id = "uid://bp3cii0ttdcof"
+[node name="road-straight2 (4)" type="Node3D" parent="." unique_id=1509227621 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -104, 0.50000095, 166)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
 
-[node name="road-end-round2 (2)" type="Node3D" parent="." unique_id=1858528034 instance=ExtResource("21_2ckwc")]
-transform = Transform3D(0, 0, -8.999999, 0, 9, 0, 8.999999, 0, 0, 4.5, 0.5, 47)
-metadata/asset_placer_res_id = "uid://bp3cii0ttdcof"
+[node name="road-straight2 (5)" type="Node3D" parent="." unique_id=1847511192 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -113, 0.5, 166)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (6)" type="Node3D" parent="." unique_id=10622461 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -122, 0.5, 166)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (7)" type="Node3D" parent="." unique_id=1601517148 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -131, 0.5, 166)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-intersection2" type="Node3D" parent="." unique_id=1136722 instance=ExtResource("21_hv3ej")]
+transform = Transform3D(-9.000007, 0, 2.7418137e-06, 0, 9, 0, -2.7418137e-06, 0, -9.000007, -140, 0.5, 166)
+metadata/asset_placer_res_id = "uid://cwfkof8t4j013"
+
+[node name="road-straight2 (8)" type="Node3D" parent="." unique_id=558229863 instance=ExtResource("6_qh43i")]
+transform = Transform3D(1.9073486e-06, 0, 9.000007, 0, 9, 0, -9.000007, 0, 1.9073486e-06, -140, 0.5000019, 157)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-curve2 (2)" type="Node3D" parent="." unique_id=1978929217 instance=ExtResource("20_h068y")]
+transform = Transform3D(9.536743e-07, 0, 9.000007, 0, 9, 0, -9.000007, 0, 9.536743e-07, -135.5, 0.5, 143.5)
+metadata/asset_placer_res_id = "uid://dpx5kk8x2tyty"
+
+[node name="road-straight2 (9)" type="Node3D" parent="." unique_id=1939999143 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -149, 0.5000019, 166)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (10)" type="Node3D" parent="." unique_id=1460942642 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -158, 0.49999905, 166)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-bend2" type="Node3D" parent="." unique_id=1191238034 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(-9.000008, 0, 2.682209e-06, 0, 9, 0, -2.682209e-06, 0, -9.000008, -167, 0.5, 166)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-bend2 (1)" type="Node3D" parent="." unique_id=345771230 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(9.000008, 0, 9.536743e-07, 0, 9, 0, -9.536743e-07, 0, 9.000008, -167, 0.5, 157)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-straight2 (11)" type="Node3D" parent="." unique_id=1652599668 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -176, 0.5, 157)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (12)" type="Node3D" parent="." unique_id=90307494 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -185, 0.5, 157)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (13)" type="Node3D" parent="." unique_id=918662194 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -194, 0.5, 157)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (14)" type="Node3D" parent="." unique_id=273701420 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -203, 0.5000019, 157)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-curve2 (3)" type="Node3D" parent="." unique_id=342756289 instance=ExtResource("20_h068y")]
+transform = Transform3D(-9.000008, 0, 2.682209e-06, 0, 9, 0, -2.682209e-06, 0, -9.000008, -216.5, 0.5, 152.5)
+metadata/asset_placer_res_id = "uid://dpx5kk8x2tyty"
+
+[node name="road-straight-half2" type="Node3D" parent="." unique_id=245183881 instance=ExtResource("23_ic2ps")]
+transform = Transform3D(-3.2782555e-06, 0, -9.000008, 0, 9, 0, 9.000008, 0, -3.2782555e-06, -221, 0.50000095, 141.5)
+metadata/asset_placer_res_id = "uid://jv1tjhomqmia"
+
+[node name="road-curve2 (4)" type="Node3D" parent="." unique_id=1141878250 instance=ExtResource("20_h068y")]
+transform = Transform3D(1.7881393e-06, 0, 9.000005, 0, 9, 0, -9.000005, 0, 1.7881393e-06, -216.5, 0.4999981, 131)
+metadata/asset_placer_res_id = "uid://dpx5kk8x2tyty"
+
+[node name="road-bend2 (2)" type="Node3D" parent="." unique_id=1411083209 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(-4.4107437e-06, 0, -9.00001, 0, 9, 0, 9.00001, 0, -4.4107437e-06, -122, 0.5, 139)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-straight2 (15)" type="Node3D" parent="." unique_id=2042494988 instance=ExtResource("6_qh43i")]
+transform = Transform3D(1.7881393e-06, 0, 9.000005, 0, 9, 0, -9.000005, 0, 1.7881393e-06, -122, 0.5, 130.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-roundabout2" type="Node3D" parent="." unique_id=856082277 instance=ExtResource("24_o2b8c")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -122, 0.5000019, 113)
+metadata/asset_placer_res_id = "uid://cwfklvxabedxd"
+
+[node name="road-straight2 (16)" type="Node3D" parent="." unique_id=1718238043 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -140, 0.5, 113)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (17)" type="Node3D" parent="." unique_id=1004928844 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -149, 0.5, 113)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-split2" type="Node3D" parent="." unique_id=1687947768 instance=ExtResource("25_by047")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -158, 0.5, 113)
+metadata/asset_placer_res_id = "uid://kwupwlqsji3d"
+
+[node name="road-bend2 (3)" type="Node3D" parent="." unique_id=783515834 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(-9.000008, 0, 2.7418137e-06, 0, 9, 0, -2.7418137e-06, 0, -9.000008, -167, 0.5, 108.5)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-straight2 (18)" type="Node3D" parent="." unique_id=378980875 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -167, 0.49999905, 117.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (19)" type="Node3D" parent="." unique_id=672964519 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -176, 0.5, 117.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-bend2 (4)" type="Node3D" parent="." unique_id=954901127 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(1.6689291e-06, 0, -9, 0, 9, 0, 9, 0, 1.6689291e-06, -203, 0.5000038, 126.5)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-bend2 (5)" type="Node3D" parent="." unique_id=885854945 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(2.2649765e-06, 0, 9.000008, 0, 9, 0, -9.000008, 0, 2.2649765e-06, -203, 0.5, 117.5)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-straight2 (20)" type="Node3D" parent="." unique_id=651668999 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9.000005, 0, -2.3841858e-07, 0, 9, 0, 2.3841858e-07, 0, 9.000005, -185, 0.5, 117.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (21)" type="Node3D" parent="." unique_id=859611365 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, -2.3841845e-07, 0, 9, 0, 2.3841845e-07, 0, 9, -194, 0.5, 117.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (22)" type="Node3D" parent="." unique_id=275058530 instance=ExtResource("6_qh43i")]
+transform = Transform3D(2.1457672e-06, 0, 9.000007, 0, 9, 0, -9.000007, 0, 2.1457672e-06, -167, 0.5, 99.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-intersection-path2 (1)" type="Node3D" parent="." unique_id=1040406419 instance=ExtResource("20_6etiv")]
+transform = Transform3D(9.000007, 0, -5.9604645e-07, 0, 9, 0, 5.9604645e-07, 0, 9.000007, -167, 0.5, 90.5)
+metadata/asset_placer_res_id = "uid://d1btflyfxo0mi"
+
+[node name="road-straight2 (23)" type="Node3D" parent="." unique_id=946682328 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -176, 0.5000038, 90.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (24)" type="Node3D" parent="." unique_id=1700045785 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -185, 0.5, 90.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (25)" type="Node3D" parent="." unique_id=1311254223 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -194, 0.5, 90.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-curve2 (5)" type="Node3D" parent="." unique_id=952519386 instance=ExtResource("20_h068y")]
+transform = Transform3D(1.3709068e-06, 0, 9.000006, 0, 9, 0, -9.000006, 0, 1.3709068e-06, -207.5, 0.5, 95)
+metadata/asset_placer_res_id = "uid://dpx5kk8x2tyty"
+
+[node name="road-bend2 (6)" type="Node3D" parent="." unique_id=1954439308 instance=ExtResource("22_iy4cx")]
+transform = Transform3D(1.66893e-06, 0, -9.000007, 0, 9, 0, 9.000007, 0, 1.66893e-06, -212, 0.5, 108.5)
+metadata/asset_placer_res_id = "uid://c8pop76gyiaht"
+
+[node name="road-straight2 (26)" type="Node3D" parent="." unique_id=1316146273 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -221, 0.4999981, 108.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (27)" type="Node3D" parent="." unique_id=1220099663 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -229.5, 0.5, 108.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-straight2 (28)" type="Node3D" parent="." unique_id=750313306 instance=ExtResource("6_qh43i")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -238, 0.5, 108.5)
+metadata/asset_placer_res_id = "uid://dcws772u1c2c7"
+
+[node name="road-slant2" type="Node3D" parent="." unique_id=1594965608 instance=ExtResource("26_hv3ej")]
+transform = Transform3D(1.1920929e-06, 0, 9.000007, 0, 9, 0, -9.000007, 0, 1.1920929e-06, -77, 0.5, 148)
+metadata/asset_placer_res_id = "uid://clwsl0oqr778b"
+
+[node name="road-slant2 (1)" type="Node3D" parent="." unique_id=324212519 instance=ExtResource("26_hv3ej")]
+transform = Transform3D(1.1920921e-06, 0, 9, 0, 9, 0, -9, 0, 1.1920921e-06, 0, 0, 0)
+metadata/asset_placer_res_id = "uid://clwsl0oqr778b"
+
+[node name="tile-high2" parent="." unique_id=1910185506 instance=ExtResource("27_6j7ep")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -77, 0.49999952, 139)
+metadata/asset_placer_res_id = "uid://8a2o6lnr7uub"
+
+[node name="tile-high" parent="tile-high2" index="0" unique_id=992824327]
+mesh = SubResource("ArrayMesh_qcrj8")
+
+[node name="road-slant2 (2)" type="Node3D" parent="." unique_id=320888716 instance=ExtResource("26_hv3ej")]
+transform = Transform3D(1.7881393e-06, 0, 9.000005, 0, 9, 0, -9.000005, 0, 1.7881393e-06, -77, 2.7499995, 139)
+metadata/asset_placer_res_id = "uid://clwsl0oqr778b"
 
 [connection signal="hour_changed" from="Sky3D/TimeOfDay" to="." method="_on_time_of_day_hour_changed"]
+
+[editable path="tile-high2"]

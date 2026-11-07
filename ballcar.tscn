@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://efpn0lxnrl53" path="res://icon.svg" id="6_7475l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t27o6"]
+friction = 0.91
 bounce = 0.14
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t27o6"]
@@ -27,7 +28,7 @@ height = 2.0
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-mass = 1.378
+mass = 2.219
 physics_material_override = SubResource("PhysicsMaterial_t27o6")
 angular_damp = 10.0
 script = ExtResource("1_8w5w3")
